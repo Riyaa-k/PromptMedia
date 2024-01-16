@@ -15,6 +15,18 @@ const CreatePrompt = () => {
         tag:'',
     });
 
+    const createPrompt=async(e)=>{
+      e.preventDefault();
+      setSubmitting(true);
+
+      try {
+        
+      } catch (error) {
+        
+      }
+
+    }
+
   return (
     <Form 
     type="Create"
