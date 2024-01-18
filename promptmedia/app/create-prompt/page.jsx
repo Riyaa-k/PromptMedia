@@ -19,13 +19,7 @@ const CreatePrompt = () => {
       e.preventDefault();
       setSubmitting(true);
 
-      try {
-        
-      } catch (error) {
-        
       }
-
-    }
 
   return (
     <Form 

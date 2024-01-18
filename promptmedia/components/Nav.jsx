@@ -37,7 +37,7 @@ const Nav = () => {
         <p className='logo_text'>PromptMedia</p>
       </Link>
 
-      {/* {alert(providers)} */}
+      
 
       {/* dekstop navigation */}
       <div className='sm:flex hidden'>
