@@ -28,24 +28,33 @@ const MyProfile = () => {
   };
 
   const handleDelete = async (post) => {
-    const hasConfirmed = confirm(
-      "Are you sure you want to delete this prompt?"
-    );
-
+    const hasConfirmed = confirm("Are you sure you want to delete this prompt?");
+  
     if (hasConfirmed) {
       try {
-        await fetch(`/api/prompt/${post._id.toString()}`, {
+        const deleteUrl = `/api/prompt/${post._id.toString()}`;
+        console.log("DELETE URL:", deleteUrl);
+  
+        const response = await fetch(deleteUrl, {
           method: "DELETE",
         });
-
+  
+        console.log("DELETE Response:", response);
+  
+        if (!response.ok) {
+          throw new Error(`Failed to delete prompt. Status: ${response.status}`);
+        }
+  
         const filteredPosts = myPosts.filter((item) => item._id !== post._id);
-
         setMyPosts(filteredPosts);
       } catch (error) {
-        console.log(error);
+        console.error("Error deleting prompt:", error);
       }
     }
   };
+  
+  
+
 
 
   // const handleDelete = async (post) => {
